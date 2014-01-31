@@ -61,7 +61,7 @@ if test -f /vagrant/rundeck.hpi ; then
         /vagrant/rundeck.hpi
 else
     java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin \
-    	http://updates.jenkins-ci.org/download/plugins/rundeck/2.11/rundeck.hpi
+    	http://updates.jenkins-ci.org/download/plugins/rundeck/3.0/rundeck.hpi
 fi
 
 # Configure the plugin.
