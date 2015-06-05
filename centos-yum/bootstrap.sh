@@ -21,7 +21,13 @@ if ! rpm -q rundeck-repo
 then
     rpm -Uvh http://repo.rundeck.org/latest.rpm 
 fi
-yum -y install rundeck
+if -f /vagrant/rundeck.rpm
+then
+    rpm -ivh /vagrant/rundeck.rpm /vagrant/rundeck-config.rpm
+else
+    yum -y install rundeck
+fi
+
 
 # Reset the home directory permission as it comes group writeable.
 # This is needed for ssh requirements.
